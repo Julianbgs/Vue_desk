@@ -195,6 +195,7 @@
   @media (max-width: 700px) {
    .card {
      width: 100%;
+     box-sizing: border-box;
    }
 
    .modal , .modal__form {
