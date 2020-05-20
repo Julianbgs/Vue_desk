@@ -2,7 +2,7 @@
   <form class="form">
     <input class="form__elem" type="text" v-model="title" placeholder="Title">
     <input class="form__elem" type="text" v-model="description" placeholder="Description">
-    <select class="form__elem" v-model="status">
+    <select class="form__elem dark" v-model="status">
       <option value="Выполнено">Выполнено</option>
       <option value="В работе">В работе</option>
       <option value="Старт">Старт</option>
@@ -61,6 +61,10 @@
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
     box-sizing: border-box;
     outline: none;
+  }
+
+  .dark {
+    color: #42b983;
   }
 
   .form__elem::placeholder {
