@@ -1,7 +1,7 @@
 <template>
   <form class="form">
-    <input class="form__elem" type="text" v-model="title" placeholder="Title">
-    <input class="form__elem" type="text" v-model="description" placeholder="Description">
+    <input class="form__elem" type="text" v-model="title" placeholder="Заголовок">
+    <input class="form__elem" type="text" v-model="description" placeholder="Описание">
     <select class="form__elem dark" v-model="status">
       <option value="Выполнено">Выполнено</option>
       <option value="В работе">В работе</option>
