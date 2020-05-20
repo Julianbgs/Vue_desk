@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" v-bind:class="{'done': status === 'Выполнено', 'work': status === 'В работе', 'start': status === 'Старт'}">
     <div class="card__status">
       {{status}}
     </div>
@@ -11,7 +11,7 @@
     </div>
     <div class="card__actions">
       <a href="#" class="card__delete" v-on:click="deleteCard">
-        <img src="../assets/delete-begin.jpg" alt="">
+        <img src="../assets/delete-begin.png" alt="">
       </a>
       <div class="card__change" v-on:click="openPopup">
         <p class="card__change-status">Изменить статус</p>
@@ -44,6 +44,9 @@
         flag: false,
       }
     },
+    mounted() {
+      console.log(this.status);
+    },
     methods: {
       deleteCard() {
         this.$emit('delete', {
@@ -70,6 +73,7 @@
 </script>
 
 <style>
+
   .card {
     position: relative;
     display: flex;
@@ -83,6 +87,18 @@
 
   .card:last-child {
     margin-bottom: 0;
+  }
+
+  .done {
+    background-color: rgba(0, 128, 0, 0.5);
+  }
+
+  .work {
+    background-color: rgba(128, 128, 0, 0.5);
+  }
+
+  .start {
+    background-color: rgba(0, 128, 128, 0.5);
   }
 
   .card__description {

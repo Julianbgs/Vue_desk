@@ -56,7 +56,7 @@
     margin-bottom: 20px;
     padding-left: 20px;
     background-color: transparent;
-    color: #000000;
+    color: #ffffff;
     border: none;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
     box-sizing: border-box;
@@ -69,7 +69,7 @@
 
   .form__submit {
     padding-left: 0;
-    color: #000000;
+    color: #ffffff;
   }
 
   @media (max-width: 700px) {

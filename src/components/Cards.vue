@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <div class="cards__body">
+    <div class="cards__body" v-if="done" v-bind:class="{'overflow-y': done}">
       <div class="cards__elem">
         <Card v-for="item in filteringTitle"
               v-bind:title="item.title"
@@ -92,13 +92,8 @@
     },
     methods: {
       onAdding: function (data) {
-        //add overflow y scroll only one time
-        if (this.flag) {
-          let bodyCard = document.querySelector('.cards__body');
-          bodyCard.style.overflowY = 'scroll';
-          this.flag = false;
-        }
         this.done = true;
+        console.log(this.done);
 
         this.items.push({
           title: data.title,
@@ -110,6 +105,12 @@
       },
 
       removeCard(data) {
+        console.log(this.items);
+        if(this.items.length === 1) {
+          this.done = false;
+          console.log(this.done);
+        }
+
         this.items = this.items.filter(item => item.id !== data.id);
       },
 
@@ -128,19 +129,6 @@
     }
   }
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <style>
   .cards {
@@ -224,6 +212,10 @@
       width: 100%;
       padding: 10px;
     }
+  }
+
+  .overflow-y {
+    overflow-y: scroll;
   }
 
 </style>
