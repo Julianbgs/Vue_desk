@@ -1,12 +1,12 @@
 <template>
   <div class="card" v-bind:class="{'done': status === 'Выполнено', 'work': status === 'В работе', 'start': status === 'Старт'}">
-    <div class="card__status">
+    <div class="card__status color">
       {{status}}
     </div>
-    <div class="card__title">
+    <div class="card__title color">
       {{title}}
     </div>
-    <div class="card__description">
+    <div class="card__description color">
       {{description}}
     </div>
     <div class="card__actions">
@@ -14,7 +14,7 @@
         <img src="../assets/delete-begin.png" alt="">
       </a>
       <div class="card__change" v-on:click="openPopup">
-        <p class="card__change-status">Изменить статус</p>
+        <p class="card__change-status color">Изменить статус</p>
       </div>
     </div>
     <div class="modal" v-if="flag">
@@ -187,6 +187,9 @@
   .modal__submit {
     padding-left: 0;
     color: #42b983;
+  }
+  .color {
+    color: #ffffff;
   }
 
   @media (max-width: 700px) {
